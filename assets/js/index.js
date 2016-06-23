@@ -2,10 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import indian_cities from './indian_cities';
 import ListView from './ListView';
+import Pagination from './Pagination';
 
 const cities  = indian_cities.sort((a,b)=>{
 	 return a.name < b.name  ? -1 : 1;
 });
+
+const pageSize = 10;
+const totalResults = cities.length;
 
 export class App extends React.Component{
 	constructor(props){
@@ -33,6 +37,11 @@ export class App extends React.Component{
 						<input placeholder="Search..." className="input" type="text" onChange={(e)=>this.handleChange(e)} />	
 					</div>
 					
+				</div>
+				<div className="pagination">
+					<div className="container">
+						<Pagination/>
+					</div>
 				</div>
 				<div className="list">
 					<div className="container">
