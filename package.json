@@ -4,7 +4,7 @@
   "description": "",
   "main": "Gulpfile.js",
   "scripts": {
-    "start":"webpack-dev-server",
+    "start":"webpack-dev-server --port 3000",
     "test": "mocha"
   },
   "repository": {
