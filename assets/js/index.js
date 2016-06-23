@@ -3,28 +3,42 @@ import ReactDOM from 'react-dom';
 import indian_cities from './indian_cities';
 import ListView from './ListView';
 import Pagination from './Pagination';
+import {search} from './utils';
 
-const cities  = indian_cities.sort((a,b)=>{
+
+
+const _cities  = indian_cities.sort((a,b)=>{
 	 return a.name < b.name  ? -1 : 1;
-});
+}).map(i=>i.name);
 
 const pageSize = 10;
-const totalResults = cities.length;
+
+const totalResults = _cities.length;
 
 export class App extends React.Component{
+
 	constructor(props){
 		super(props);
+		this.state = {
+			query : ''
+		}
+	}
+
+	componentDidMount(){
+
 	}
 
 	
 	
 
 	handleChange(e){
-
+		this.setState({query: e.target.value});
 	}
 
 	render(){
-		const {cities} = this.props;
+		const cities = search(_cities,this.state.query);
+
+		const {query} = this.state;
 		return <div className="root">
 			<header>
 				<div className="container">
@@ -34,18 +48,18 @@ export class App extends React.Component{
 			<main>
 				<div className="search">
 					<div className="container">
-						<input placeholder="Search..." className="input" type="text" onChange={(e)=>this.handleChange(e)} />	
+						<input value={query} placeholder="Search..." className="input" type="text" onChange={(e)=>this.handleChange(e)} />	
 					</div>
 					
 				</div>
 				<div className="pagination">
 					<div className="container">
-						<Pagination/>
+						<Pagination />
 					</div>
 				</div>
 				<div className="list">
 					<div className="container">
-						<ListView list={indian_cities.map(i=>i.name)} />
+						<ListView list={cities} />
 					</div>
 				</div>
 				
@@ -55,13 +69,7 @@ export class App extends React.Component{
 	}
 }
 
-App.defaultProps = {
-		cities : []
-}
-App.propTypes = {
-		cities : React.PropTypes.array.isRequired 
-}
 
 export default App;
 
-ReactDOM.render(<App cities={cities} />,document.getElementById("app"));
+ReactDOM.render(<App />,document.getElementById("app"));

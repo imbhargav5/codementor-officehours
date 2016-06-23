@@ -9,3 +9,11 @@ export default class ListView extends React.Component{
 		</ul>
 	}
 }
+
+ListView.propTypes = {
+	list : React.PropTypes.array.isRequired
+}
+
+ListView.defaultProps = {
+	list : []
+}

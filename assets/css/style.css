@@ -40,13 +40,18 @@ header{
 .search input:focus{
 	box-shadow: 0 4px 4px rgba(0,0,0,0.25), 0 1px 1px rgba(0,0,0,0.22)
 }
+ul.list-view, ul.pagination{
+	padding: 0;
+	margin : 0;
+	list-style: none;
+}
+
+
 
 ul.list-view{
-	padding: 0;
 	background : white;
-	margin : 0;
 	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-	list-style: none;
+	
 }
 
 ul.list-view > li{
@@ -54,3 +59,11 @@ ul.list-view > li{
 	border-bottom : 1px solid #e5e5e5;
 }
 
+ul.pagination{
+	display : flex;
+}
+ul.pagination li{
+	flex : 1;
+	box-sizing: border-box;
+	padding: 0px 4px;
+}
