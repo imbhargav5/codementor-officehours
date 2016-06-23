@@ -46,6 +46,12 @@ ul.list-view, ul.pagination{
 	list-style: none;
 }
 
+div.list-view.no-results{
+	padding:40px;
+	text-align :center ;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+	background : #e5e5e5;
+}
 
 
 ul.list-view{
