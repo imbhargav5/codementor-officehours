@@ -16,12 +16,11 @@ export class App extends React.Component{
 
 
 	handleChange(e){
-		this.setState({query: e.target.value});
+		
 	}
 
 	render(){
 		const {list} = this.props;
-		let filtered_list = search(list,this.state.query);
 
 		const {query} = this.state;
 		return <div className="root">
@@ -33,14 +32,14 @@ export class App extends React.Component{
 			<main>
 				<div className="search">
 					<div className="container">
-						<input value={query} placeholder="Search..." className="input" type="text" onChange={(e)=>this.handleChange(e)} />	
+						<input placeholder="Search..." className="input" type="text" onChange={(e)=>this.handleChange(e)} />	
 					</div>
 					
 				</div>
 
 				<div className="list">
 					<div className="container">
-						<ListView list={filtered_list} />
+						
 					</div>
 				</div>
 				

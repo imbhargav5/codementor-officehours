@@ -1,10 +1,9 @@
 import { mount } from 'enzyme';
-import * as chai from 'chai';
+import {expect} from 'chai';
 import App from '../assets/js/App';
 import ListView from '../assets/js/ListView';
-import {search,paginate} from '../assets/js/utils';
+import {search} from '../assets/js/utils';
 
-const {expect} = chai;
 
 
 describe('Codementor OfficeHour App',function(){
@@ -12,11 +11,14 @@ describe('Codementor OfficeHour App',function(){
 	describe('Component Tests',function(){
 		
 		describe('App Component',function(){
+			let wrapper;
 
-			it('search input correctly sets the state of App Component on onChange event',function(){
-				const wrapper = mount(<App list={[]}/>);
-				wrapper.find('.search input').simulate('change',{target: { value : 'hello' }});
-				expect(wrapper.state('query')).to.equal('hello');
+			beforeEach(function(){
+				wrapper = mount(<App list={[]}/>);
+			});
+
+			it.skip('search input correctly sets the state of App Component on onChange event',function(){
+
 			});
 
 		});
@@ -29,24 +31,19 @@ describe('Codementor OfficeHour App',function(){
 				wrapper = mount(<ListView list={[1,2,3,4]}/>);
 			});
 
-			it('renders list items with keys correctly',function(){
-				expect(wrapper.find('li').at(0).key()).to.equal('0');
+			
+			it.skip('correctly renders the exact number of li elements as the size of the list ',function(){
+				
 			});
 
-			it('correctly renders li elements',function(){
-				expect(wrapper.find('li')).to.have.length(4);
+			
+			it.skip('correctly sets the text to li elements',function(){
+				
 			});
 
-			it('correctly sets the keys to li elements',function(){
-
-			});
-
-			it('correctly sets the text to li elements',function(){
-				expect(wrapper.find('li').at(1).text()).to.equal('2');
-			});
-
-			it('has exactly one ul element',function(){
-				expect(wrapper.find('ul')).to.have.length(1);
+			
+			it.skip('shows no results div when there are no list items',function(){
+				
 			});
 
 
@@ -61,13 +58,17 @@ describe('Codementor OfficeHour App',function(){
 	describe('Util Tests',function(){
 		describe('Search Util',function(){
 			
-
+			let list;
+			beforeEach(function(){
+				 list = ["codementor","github","stackoverflow","Facebook","Google"];
+			});
+			
 			it('search util is defined',function(){
-				expect(search).to.not.be.undefined;
+				expect(search).to.be.not.undefined;
 			});
 
-			it('search util is case insenstive',function(){
-				expect(search(["Hyderabad","New York"],"hyd")).to.have.lengthOf(1);
+			it.skip('search util should filter a list correctly',function(){
+				
 			});
 
 		});
