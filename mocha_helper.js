@@ -1,5 +1,4 @@
 var jsdom = require('jsdom');
-var fetch = require('isomorphic-fetch');
 var React = require('react');
 var sinon = require('sinon');
 
