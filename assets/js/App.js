@@ -28,12 +28,13 @@ export class App extends React.Component{
 		const {list} = this.props;
 		const {page} = this.state;
 		const page_size = 100;
+		const filtered_list = search(list,this.state.query);
 		const pages = paginate({
-			total_count : list.length,
+			total_count : filtered_list.length,
 			page,
 			page_size
 		});
-		const filtered_list = search(list,this.state.query).slice(page*page_size,page*page_size+page_size);
+		const paged_list = filtered_list.slice(page*page_size,page*page_size+page_size);
 
 		const {query} = this.state;
 		return <div className="root">
@@ -61,7 +62,7 @@ export class App extends React.Component{
 				
 				<div className="list">
 					<div className="container">
-						<ListView list={filtered_list}/>
+						<ListView list={paged_list}/>
 					</div>
 				</div>
 				
