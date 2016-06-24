@@ -22033,7 +22033,7 @@
 		(0, _createClass3.default)(App, [{
 			key: 'handleChange',
 			value: function handleChange(e) {
-				this.setState({ query: e.target.value });
+				this.setState({ query: e.target.value, page: 0 });
 			}
 		}, {
 			key: 'handlePageChange',

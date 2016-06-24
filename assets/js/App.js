@@ -17,7 +17,7 @@ export class App extends React.Component{
 
 
 	handleChange(e){
-		this.setState({query: e.target.value});
+		this.setState({query: e.target.value, page : 0});
 	}
 
 	handlePageChange(page){
