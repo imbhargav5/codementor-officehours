@@ -22049,12 +22049,13 @@
 				var page = this.state.page;
 	
 				var page_size = 100;
+				var filtered_list = (0, _utils.search)(list, this.state.query);
 				var pages = (0, _utils.paginate)({
-					total_count: list.length,
+					total_count: filtered_list.length,
 					page: page,
 					page_size: page_size
 				});
-				var filtered_list = (0, _utils.search)(list, this.state.query).slice(page * page_size, page * page_size + page_size);
+				var paged_list = filtered_list.slice(page * page_size, page * page_size + page_size);
 	
 				var query = this.state.query;
 	
@@ -22106,7 +22107,7 @@
 							_react2.default.createElement(
 								'div',
 								{ className: 'container' },
-								_react2.default.createElement(_ListView2.default, { list: filtered_list })
+								_react2.default.createElement(_ListView2.default, { list: paged_list })
 							)
 						)
 					)
