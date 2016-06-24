@@ -8,13 +8,14 @@ export const paginate = function({total_count, page,page_size}){
 	next_page = page + 1;
 	prev_page = page - 1;
 	
-	if(page==0){
+	if(page<=0){
 		prev_page = -1	
 	}
-	if(page==max_pages){
+	if(page>=max_pages){
 		next_page = -1;
 	}
-	
+
+	console.log(page,max_pages);
 	return {
 		prev_page,
 		next_page,

@@ -136,17 +136,17 @@ describe('Codementor OfficeHour App',function(){
 		
 		});
 
-		describe("when page_size is 10 and total_results is 100, current_page is 9, it correctly display",function(){
+		describe("when page_size is 10 and total_results is 91, current_page is 9, it correctly display",function(){
 			it('runs',function(){
 				let options = {
-					total_count : 90,
+					total_count : 91,
 					page_size : 10,
-					page : 8
+					page : 9
 				};
 				expect(paginate(options)).to.be.eql({
 					 next_page : -1,
-					 prev_page : 7,
-					 page : 8
+					 prev_page : 8,
+					 page : 9
 				});
 			});
 		
