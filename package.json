@@ -1,0 +1,43 @@
+{
+  "name": "codementor-officehours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "start":"webpack-dev-server --port 3000",
+    "test": "mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bhargav175/codementor-officehours.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bhargav175/codementor-officehours/issues"
+  },
+  "homepage": "https://github.com/bhargav175/codementor-officehours#readme",
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-2": "^6.5.0",
+    "chai": "^3.5.0",
+    "enzyme": "^2.3.0",
+    "isomorphic-fetch": "^2.2.1",
+    "jsdom": "^9.2.1",
+    "mocha": "^2.5.3",
+    "react": "^15.1.0",
+    "react-addons-test-utils": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-hot-loader": "^1.3.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2",
+    "redux-thunk": "^2.1.0",
+    "sinon": "^1.17.4",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
