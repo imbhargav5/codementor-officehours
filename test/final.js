@@ -1,40 +1,39 @@
-import { mount } from 'enzyme';
+import {mount} from 'enzyme';
 import {expect} from 'chai';
 import App from '../assets/js/App';
 import ListView from '../assets/js/ListView';
 
 
+describe.skip('String Array props', function () {
+  it('Checks if a string exists in an array', function () {
+    expect("Samuel").to.be.oneOf(["Samuel", "Ramsay", "John"]);
+  });
 
-// describe.skip('String Array props',function(){
-// 	it('Checks if a string exists in an array',function(){
-// 			 expect("Samuel").to.be.oneOf(["Samuel","Ramsay","John"]);
-// 	});
+});
 
-// });
-
-// describe('All components take props', function() {
-// 	  var tests = [
-// 	     {name : "App",component : App},
-// 	     {name : "ListView",component : ListView},
-// 	  ];
+describe('All components take props', function () {
+  var tests = [
+    {name: "App", component: App},
+    {name: "ListView", component: ListView},
+  ];
 
 
-// 	  tests.forEach(function(test) {
+  tests.forEach(function (test) {
 
-// 		    it(test.name + ' correctly takes foo as prop with value 10', function() {
-// 		     	 const wrapper = mount(<test.component foo={10}/>);
-// 		     	 expect(wrapper.prop("foo")).to.equal(10);
-// 		    });
+    it(test.name + ' correctly takes list as prop with value foo', function () {
+      const wrapper = mount(<test.component list={["foo"]}/>);
+      expect(wrapper.find("li").last().prop('children')).to.equal("foo");
+    });
 
-// 	  });
+  });
 
-// });
+});
 
 
 // describe('Integration Test',function(){
 // 		let wrapper;
 // 		let list;
-		
+
 // 		describe('query is "yo"',function(){
 // 			beforeEach(function(){
 // 				list = ["Hyderabad","New York","Delhi","San Fransisco"];
